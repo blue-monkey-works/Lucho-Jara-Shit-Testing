@@ -44,7 +44,7 @@ class App:
             self.on_loop()
             self.on_render()
         self.on_cleanup()
-        #on_execute stars and recalls all loop functions
+        #on_execute starts and recalls all loop functions
 
 
 if __name__ == "__main__":
