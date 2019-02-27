@@ -1,6 +1,8 @@
 import pygame
 from pygame.locals import *
 
+from game.grid.Grid import Grid
+
 
 class App:
 
@@ -14,6 +16,7 @@ class App:
         pygame.init()
         self._display_surf = pygame.display.set_mode(self.size, pygame.HWSURFACE | pygame.DOUBLEBUF)
         self._running = True
+        self.grid = Grid(self._display_surf)
         # init stage
 
     def on_event(self, event):
@@ -26,7 +29,8 @@ class App:
         # refactor data on loop stage
 
     def on_render(self):
-        pass
+        self.grid.draw()
+        pygame.display.flip()
         # redraw screen output on render stage
 
     def on_cleanup(self):
