@@ -28,6 +28,13 @@ class Grid:
                 row.append(Tile(self.tile_size * x, self.tile_size * y, self.surface))
             self.tiles.append(row)
 
+    def get_tile(self, x, y):
+        for tile_column in self.tiles:
+            for tile in tile_column:
+                if tile.contains(x, y):
+                    return tile
+        return None
+
     def draw(self):
         for tile_column in self.tiles:
             for tile in tile_column:
