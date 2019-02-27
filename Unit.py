@@ -1,12 +1,17 @@
 import pygame
 
-class luchoJara:
-    def __init__(self):
-        self._image_surf = None
-        self.width = 64
-        self.height = 64
+class Unit:
+    def __init__(self, sprImg, displaysurface):
+        self.surface = pygame.Surface((64,64))
+        self.sprite = pygame.image.load(sprImg)
+        self.x = 64
+        self.y = 64
+        self.display_surf = displaysurface
+        self.spriteRect = self.sprite.get_rect();
         self.selectable = True
         self.movable = False
-        self.class = "unit"
+        self.type = ["unit"]
+    def draw(self, x, y):
+        self.display_surf.blit(self.sprite,(x,y))
 
-    def draw(self):
+
