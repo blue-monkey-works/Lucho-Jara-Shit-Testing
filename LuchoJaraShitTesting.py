@@ -34,7 +34,9 @@ class App:
         # refactor data on loop stage
 
     def on_render(self):
+        self.LuchoJaraUnit.draw(64, 64)
         self.grid.draw()
+        self.LuchoJaraUnit.draw(64, 64)
         pygame.display.flip()
         # redraw screen output on render stage
 

@@ -13,5 +13,11 @@ class Tile:
         self.rect = Rect(x, y, self.size, self.size)
         self.surface = surface
 
+    def contains(self, x, y):
+        return x in range(self.x) and y in range(self.y)
+
+    def getTile(self):
+        return self
+
     def draw(self):
         pygame.draw.rect(self.surface, self.grid_color, self.rect, 1)
