@@ -1,5 +1,5 @@
 import pygame
-
+from Unit import *
 from pygame.locals import *
 
 
@@ -14,12 +14,16 @@ class App:
     def on_init(self):
         pygame.init()
         self._display_surf = pygame.display.set_mode(self.size, pygame.HWSURFACE | pygame.DOUBLEBUF)
+        self.LuchoJaraUnit = Unit("LuchoJaraHeroSprite.png",self._display_surf)
+        self.LuchoJaraUnit.draw(64, 64)
         self._running = True
         # init stage
 
     def on_event(self, event):
         if event.type == pygame.QUIT:
             self._running = False
+        #elif event.type == pygame.MOUSEMOTION:
+        #    self.LuchoJaraUnit.draw()
         # read data input on event stage
 
     def on_loop(self):
@@ -27,7 +31,8 @@ class App:
         # refactor data on loop stage
 
     def on_render(self):
-        pass
+
+        pygame.display.flip()
         # redraw screen output on render stage
 
     def on_cleanup(self):
